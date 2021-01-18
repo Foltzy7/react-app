@@ -17,7 +17,7 @@ function Error500() {
                     It looks like something went wrong. We will get that fixed as soon as possible.
                 </p>
                 <p>
-                    <a href="#" data-testid="return-to-previous" onClick={handleClick}>
+                    <a href="/#" data-testid="return-to-previous" onClick={handleClick}>
                         <i className="fa fa-angle-left"/>To previous page{" "}
                     </a>
                 </p>
