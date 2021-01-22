@@ -29,6 +29,7 @@ function Home() {
       <div>
         <h2>Ministries</h2>
         <p>{ministries[0].name}</p>
+        <p>{ministries[0].description}</p>
       </div>
     </div>
   );
