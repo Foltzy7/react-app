@@ -9,7 +9,7 @@ export const fetchMinistries = createAsyncThunk(
       name: "Ministry 1",
       description: "a generic ministry description",
     } as Ministry;
-      // eslint-disable-next-line no-console
+    // eslint-disable-next-line no-console
     console.log("called");
     return new Promise<[Ministry]>((resolve, reject) => {
       resolve([ministry]);
@@ -47,9 +47,9 @@ const ministriesSlice = createSlice({
         };
       }
     );
-      builder.addCase(fetchMinistries.rejected, (state, action) => {
-          return { ...state, status: AsyncStatus.error };
-      });
+    builder.addCase(fetchMinistries.rejected, (state, action) => {
+      return { ...state, status: AsyncStatus.error };
+    });
     builder.addDefaultCase((state, action) => state);
   },
 });
