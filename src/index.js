@@ -9,11 +9,9 @@ ReactDOM.render(
   <React.StrictMode>
     <div className="container">
       <div className="row justify-content-md-center">
-        <div className="col-md-1" />
-        <div className="col-md-10">
+        <div className="col-md-12">
           <App />
         </div>
-        <div className="col-md-1" />
       </div>
     </div>
   </React.StrictMode>,

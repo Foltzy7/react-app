@@ -1,13 +1,15 @@
 import React from "react";
 import "./App.css";
-import { Provider } from "react-redux";
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import {Provider} from "react-redux";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from "./pages/home";
 import ErrorBoundary from "./pages/errors/error-boundary";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faCheckSquare, faCoffee } from "@fortawesome/free-solid-svg-icons";
-import { store } from "./store/store";
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {fab} from "@fortawesome/free-brands-svg-icons";
+import {faCheckSquare, faCoffee} from "@fortawesome/free-solid-svg-icons";
+import {store} from "./store/store";
+import About from "./pages/about";
+import Header from "./components/header";
 
 library.add(fab, faCheckSquare, faCoffee);
 
@@ -17,23 +19,14 @@ function App() {
       <ErrorBoundary>
         <Provider store={store}>
           <div>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
-                  <Link to="/users">Users</Link>
-                </li>
-              </ul>
-            </nav>
+            <Header/>
 
             {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
             <Switch>
+              <Route path="/about">
+                <About />
+              </Route>
               <Route path="/">
                 <Home />
               </Route>
