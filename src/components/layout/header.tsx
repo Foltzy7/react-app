@@ -1,6 +1,6 @@
 import React from "react";
 import {Nav, Navbar,} from "react-bootstrap";
-import logo from "../images/black-mage.png"
+import logo from "../../images/black-mage.png"
 
 function Header() {
   return (

@@ -40,3 +40,32 @@
 nav {
   background: chocolate;
 }
+
+.parallax1 {
+  /* The image used */
+  background-image: url("images/paralax-background-1.jpg");
+
+  /* Set a specific height */
+  height: 10000px;
+  width: available;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+.parallax2 {
+  /* The image used */
+  background-image: url("images/paralax-background-1.jpg");
+
+  /* Set a specific height */
+  height: 1000px;
+  width: max-content;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

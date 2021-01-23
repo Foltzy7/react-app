@@ -7,13 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="container">
-      <div className="row justify-content-md-center">
-        <div className="col-md-12">
-          <App />
-        </div>
-      </div>
-    </div>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
