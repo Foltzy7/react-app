@@ -3,19 +3,28 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import "bootstrap/dist/css/bootstrap.css";
+import theme from "@chakra-ui/theme";
+import { ThemeProvider } from "@emotion/react";
+// import "bootstrap/dist/css/bootstrap.css";
+
+const breakpoints = ["360px", "768px", "1024px", "1440px"];
+breakpoints.sm = breakpoints[0];
+breakpoints.md = breakpoints[1];
+breakpoints.lg = breakpoints[2];
+breakpoints.xl = breakpoints[3];
+
+const newTheme = {
+  ...theme,
+  breakpoints,
+};
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="container">
+    <ThemeProvider theme={newTheme}>
       <div className="row justify-content-md-center">
-        <div className="col-md-1" />
-        <div className="col-md-10">
-          <App />
-        </div>
-        <div className="col-md-1" />
+        <App />
       </div>
-    </div>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
