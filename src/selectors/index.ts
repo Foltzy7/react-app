@@ -8,7 +8,18 @@ const ministrySelector = createSelector(
   (ministries) => ministries
 );
 
+const orgEventsSelector = (state: RootState) => state.orgEvents.orgEvent;
+const eventSelector = createSelector(
+  [orgEventsSelector],
+  (orgEvents) => orgEvents
+);
+
 export function useMinistries() {
   const ministries = useSelector(ministrySelector);
   return { ministries };
+}
+
+export function useEvents() {
+  const orgEvents = useSelector(eventSelector);
+  return { orgEvents };
 }

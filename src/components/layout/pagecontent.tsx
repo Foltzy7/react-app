@@ -1,11 +1,17 @@
 import React from "react";
 import "../page/page.scss";
+import "../../pages/home.scss";
+import classnames from "classnames";
 
-export default function PageContent({ children = <></> }) {
+type Props = {
+  children: JSX.Element;
+  className?: string;
+};
+export default function PageContent(props: Props) {
+  let className = classnames("page-content", "bg-floralwhite");
+  if (props.className) {
+    className = classnames("page-content", props.className);
+  }
 
-  return (
-    <div className="page-content">
-      {children}
-    </div>
-  );
+  return <div className={className}>{props.children}</div>;
 }
