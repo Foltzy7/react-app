@@ -1,18 +1,12 @@
-import { AsyncStatus } from "../models/async-status";
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { OrgEvent } from "../models/orgEvent";
+import {AsyncStatus} from "../models/async-status";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {OrgEvent} from "../models/orgEvent";
+import {getOrgEvents} from "../services/orgEventService";
 
 export const fetchOrgEvents = createAsyncThunk(
   "fetch-org-events",
   async ({ date }: { date: string }, thunkAPI) => {
-    const orgEvent = {
-      name: "Event for kids 1",
-      location: "Church event center",
-      description: "a generic kids events description",
-    } as OrgEvent;
-    return new Promise<[OrgEvent]>((resolve, reject) => {
-      resolve([orgEvent]);
-    });
+    return getOrgEvents({});
   }
 );
 
@@ -38,7 +32,6 @@ const orgEventsSlice = createSlice({
       fetchOrgEvents.fulfilled,
       (state, action: { payload: OrgEvent[]; type: string }) => {
         const orgEvent = action.payload;
-
         return {
           ...state,
           orgEvent,
