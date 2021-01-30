@@ -11,7 +11,8 @@ export default function OrgEventDisplay(props: Props) {
     <div>
       <h4>{orgEvent.name}</h4>
       {orgEvent.startDate && <p>Event date: {orgEvent.startDate}</p>}
-      <p>Description: {orgEvent.description}</p>
+        <p><strong>Location:</strong> {orgEvent.location}</p>
+      <p><strong>Description:</strong> {orgEvent.description}</p>
     </div>
   );
 }
