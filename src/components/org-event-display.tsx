@@ -1,5 +1,8 @@
 import React from "react";
 import { OrgEvent } from "../models/orgEvent";
+import Card from "./card";
+import CardHeader from "./card-header";
+import CardContent from "./card-content";
 
 type Props = {
   orgEvent: OrgEvent;
@@ -9,14 +12,18 @@ export default function OrgEventDisplay(props: Props) {
   const { orgEvent } = props;
   return (
     <div>
-      <h4>{orgEvent.name}</h4>
       {orgEvent.startDate && <p>Event date: {orgEvent.startDate}</p>}
-      <p>
-        <strong>Location:</strong> {orgEvent.location}
-      </p>
-      <p>
-        <strong>Description:</strong> {orgEvent.description}
-      </p>
+      <Card fillHeight>
+        <CardHeader>{orgEvent.name}</CardHeader>
+        <CardContent>
+          <p>
+            <strong>Location:</strong> {orgEvent.location}
+          </p>
+          <p>
+            <strong>Description:</strong> {orgEvent.description}
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }
