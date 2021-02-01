@@ -1,5 +1,5 @@
 import React from "react";
-import { OrgEvent } from "../models/orgEvent";
+import { OrgEvent } from "../../models/orgEvent";
 import EventCard from "./eventCard";
 import EventCardHeader from "./event-card-header";
 import EventCardContent from "./event-card-content";

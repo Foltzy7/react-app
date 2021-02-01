@@ -1,0 +1,29 @@
+import CardGrid from "../layout/card-grid";
+import OrgEventDisplay from "./org-event-display";
+import PageContent from "../layout/pagecontent";
+import React, { useEffect } from "react";
+import { useEvents } from "../../selectors";
+import { fetchOrgEvents } from "../../reducers/org-events";
+import { useDispatch } from "react-redux";
+
+export default function EventsDislpay() {
+  const dispatch = useDispatch();
+  const { orgEvents } = useEvents();
+  const date = "01-01-2020";
+
+  useEffect(() => {
+    dispatch(fetchOrgEvents({ date }));
+  }, [dispatch, date]);
+  return (
+    <PageContent className={"content-primary"}>
+      <div id="event-content">
+        <h2>Events</h2>
+        <CardGrid>
+          {orgEvents.map((orgEvent, index) => (
+            <OrgEventDisplay orgEvent={orgEvent} key={`event-${index}`} />
+          ))}
+        </CardGrid>
+      </div>
+    </PageContent>
+  );
+}
