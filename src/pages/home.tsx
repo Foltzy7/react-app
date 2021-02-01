@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fetchMinistries } from "../reducers/ministries";
-import { useDispatch } from "react-redux";
-import { ministryStatus, useStatuses } from "../selectors/status";
-import { useEvents, useMinistries } from "../selectors";
+import React, {useEffect} from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {fetchMinistries} from "../reducers/ministries";
+import {useDispatch} from "react-redux";
+import {ministryStatus, useStatuses} from "../selectors/status";
+import {useEvents, useMinistries} from "../selectors";
 import "../components/page/page.scss";
 import PageContent from "../components/layout/pagecontent";
-import { fetchOrgEvents } from "../reducers/org-events";
-import OrgEventDisplay from "../components/org-event-display";
+import {fetchOrgEvents} from "../reducers/org-events";
 import "./home.scss";
 import EventForm from "../components/event-form";
+import OrgEventDisplay from "../components/org-event-display";
+import CardGrid from "../components/layout/card-grid";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ export default function Home() {
   }, [dispatch, date]);
   return (
     <>
-      <PageContent>
+      <PageContent className={"content-primary"}>
         <div id="ministries-content">
           <div className="row">
             <h1 className="m-auto">Welcome to YourChurchHere!</h1>
@@ -54,16 +55,18 @@ export default function Home() {
         </div>
       </PageContent>
       <div style={{ height: "300px" }} />
-      <PageContent className={"bg-coral"}>
+      <PageContent className={"content-primary"}>
         <div id="event-content">
           <h2>Events</h2>
-          {orgEvents.map((orgEvent, index) => (
-            <OrgEventDisplay orgEvent={orgEvent} key={`event-${index}`} />
-          ))}
+          <CardGrid>
+            {orgEvents.map((orgEvent, index) => (
+              <OrgEventDisplay orgEvent={orgEvent} key={`event-${index}`} />
+            ))}
+          </CardGrid>
         </div>
       </PageContent>
       <div style={{ height: "300px" }} />
-      <PageContent className={"bg-coral"}>
+      <PageContent className={"content-primary"}>
         <EventForm />
       </PageContent>
     </>

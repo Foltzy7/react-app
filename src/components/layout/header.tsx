@@ -1,10 +1,11 @@
 import React from "react";
 import {Nav, Navbar,} from "react-bootstrap";
 import logo from "../../images/black-mage.png"
+import "./header.scss";
 
 function Header() {
   return (
-    <Navbar bg="dark" expand="lg" variant="dark">
+    <Navbar className="nav-primary" expand="lg" variant="dark">
       <Navbar.Brand href="#home">
           <a className="navbar-brand" href="/">
               <img src={logo} alt="Logo" width="150" height="150" />

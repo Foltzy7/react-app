@@ -1,8 +1,8 @@
 import classnames from "classnames";
 import React from "react";
-import "./card.scss";
+import "./event-card.scss";
 
-export default function Card(props: any) {
+export default function EventCard(props: any) {
   const classes = classnames(
     "callout",
     "callout-flex",
@@ -12,7 +12,7 @@ export default function Card(props: any) {
   );
 
   return (
-    <div className={classes} data-testid="card">
+    <div className={classes} data-testid="event-card">
       {props.children}
     </div>
   );
