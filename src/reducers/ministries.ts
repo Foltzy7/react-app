@@ -6,8 +6,8 @@ export const fetchMinistries = createAsyncThunk(
   "fetch-ministries",
   async ({ date }: { date: string }, thunkAPI) => {
     const ministry = {
-      name: "Ministry 1",
-      description: "a generic ministry description",
+      name: "Weekly service",
+      description: "Join us at 10am every Sunday!",
     } as Ministry;
     return new Promise<[Ministry]>((resolve, reject) => {
       resolve([ministry]);

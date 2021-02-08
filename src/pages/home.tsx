@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <>
       <MinistriesDisplay />
-      <div style={{ height: "300px" }} />
+      <div style={{ height: "150px" }} />
       <EventsDislpay />
-      <div style={{ height: "300px" }} />
+      <div style={{ height: "150px" }} />
       <EventForm />
     </>
   );

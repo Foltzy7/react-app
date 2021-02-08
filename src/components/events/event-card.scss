@@ -15,7 +15,7 @@ $primary-tan: #B1A296;
 }
 
 .event-card-header {
-  border-top-left-radius: 25px;
+  border-top-left-radius: 15px;
   border: 2px solid black;
   background-color: $primary-blue;
   color: white;
@@ -29,8 +29,9 @@ $primary-tan: #B1A296;
 }
 
 .callout-flex-content {
+  padding: 0 15px 0;
   &.primary {
-    border-bottom-right-radius: 25px;
+    border-bottom-right-radius: 15px;
     border: 2px solid black;
     background-color: $primary-blue;
     color: black;

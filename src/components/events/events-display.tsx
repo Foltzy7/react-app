@@ -5,6 +5,8 @@ import React, { useEffect } from "react";
 import { useEvents } from "../../selectors";
 import { fetchOrgEvents } from "../../reducers/org-events";
 import { useDispatch } from "react-redux";
+import "./events-display.scss";
+import GrowIn from "../animations/grow-in";
 
 export default function EventsDislpay() {
   const dispatch = useDispatch();
@@ -14,13 +16,16 @@ export default function EventsDislpay() {
   useEffect(() => {
     dispatch(fetchOrgEvents({ date }));
   }, [dispatch, date]);
+
   return (
     <PageContent className={"content-primary"}>
-      <div id="event-content">
+      <div id="event-content" className={"event-content"}>
         <h2>Events</h2>
         <CardGrid>
           {orgEvents.map((orgEvent, index) => (
-            <OrgEventDisplay orgEvent={orgEvent} key={`event-${index}`} />
+            <GrowIn inProp={true}>
+              <OrgEventDisplay orgEvent={orgEvent} key={`event-${index}`} />
+            </GrowIn>
           ))}
         </CardGrid>
       </div>

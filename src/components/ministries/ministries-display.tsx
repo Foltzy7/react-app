@@ -5,6 +5,9 @@ import { useDispatch } from "react-redux";
 import { ministryStatus, useStatuses } from "../../selectors/status";
 import { useMinistries } from "../../selectors";
 import { fetchMinistries } from "../../reducers/ministries";
+import "./ministries-display.scss";
+import building from "../../images/building.jpg";
+import GrowIn from "../animations/grow-in";
 
 export default function MinistriesDisplay() {
   const dispatch = useDispatch();
@@ -17,7 +20,7 @@ export default function MinistriesDisplay() {
   }, [dispatch, date]);
   return (
     <PageContent className={"content-primary"}>
-      <div id="ministries-content">
+      <div id="ministries-content" className={"ministries-content"}>
         <div className="row">
           <h1 className="m-auto">Welcome to YourChurchHere!</h1>
         </div>
@@ -31,14 +34,16 @@ export default function MinistriesDisplay() {
           Coffee
         </a>
         <div>
-          <h2>Ministries</h2>
           {ministries.map((ministry, index) => (
             <div key={`ministry-${index}`}>
-              <h4>{ministry.name}</h4>
-              <p>Date: {ministry.startDate ? ministry.startDate : "N/A"}</p>
+              <h2>{ministry.name}</h2>
+              {ministry.startDate && <p>Date: {ministry.startDate}</p>}
               <p>Description: {ministry.description}</p>
             </div>
           ))}
+          <GrowIn inProp={true}>
+            <img src={building} alt={"church building"} style={{ width: "100%" }}/>
+          </GrowIn>
         </div>
       </div>
     </PageContent>
