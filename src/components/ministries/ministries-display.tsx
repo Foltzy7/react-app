@@ -31,7 +31,7 @@ export default function MinistriesDisplay() {
               <p>Description: {ministry.description}</p>
             </div>
           ))}
-          <Slide inProp={true} durationOverride={1250}>
+          <Slide inProp={true} durationOverride={1000}>
             <img
               src={building}
               alt={"church building"}

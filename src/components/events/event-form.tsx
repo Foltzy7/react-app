@@ -1,7 +1,7 @@
 import React from "react";
-import { useForm } from "react-hook-form";
-import { FormInput } from "../layout/form-input";
-import { OrgEvent } from "../../models/orgEvent";
+import {useForm} from "react-hook-form";
+import {FormInput} from "../layout/form-input";
+import {OrgEvent} from "../../models/orgEvent";
 import PageContent from "../layout/pagecontent";
 
 export default function EventForm() {
@@ -52,6 +52,8 @@ export default function EventForm() {
           errors={errors}
           options={{
             required: "Description is required",
+            minLength: 15,
+            maxLength: 20,
           }}
         />
         <input type="submit" />
