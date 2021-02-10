@@ -1,5 +1,5 @@
-import {Transition} from "react-transition-group";
-import React, {useState} from "react";
+import { Transition } from "react-transition-group";
+import React from "react";
 
 type Props = {
   children: JSX.Element;
@@ -9,10 +9,7 @@ type Props = {
 
 export default function GrowIn(props: Props) {
   const { children, inProp, durationOverride } = props;
-  const [duration, setDuration] = useState(500);
-  if (durationOverride) {
-    setDuration(durationOverride);
-  }
+  const duration = durationOverride || 500;
 
   const defaultStyle = {
     transition: `transform ${duration}ms, opacity ${duration}ms ease`,

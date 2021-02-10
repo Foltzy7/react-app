@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PageContent from "../layout/pagecontent";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -7,7 +6,7 @@ import { useMinistries } from "../../selectors";
 import { fetchMinistries } from "../../reducers/ministries";
 import "./ministries-display.scss";
 import building from "../../images/building.jpg";
-import GrowIn from "../animations/grow-in";
+import Slide from "../animations/slide";
 
 export default function MinistriesDisplay() {
   const dispatch = useDispatch();
@@ -24,15 +23,6 @@ export default function MinistriesDisplay() {
         <div className="row">
           <h1 className="m-auto">Welcome to YourChurchHere!</h1>
         </div>
-        <a
-          className="btn btn-link"
-          href={"https://www.scooterscoffee.com/"}
-          rel={"noopener noreferrer"}
-          target={"_blank"}
-        >
-          <FontAwesomeIcon icon="coffee" spin={true} className="mr-sm-1" />
-          Coffee
-        </a>
         <div>
           {ministries.map((ministry, index) => (
             <div key={`ministry-${index}`}>
@@ -41,9 +31,13 @@ export default function MinistriesDisplay() {
               <p>Description: {ministry.description}</p>
             </div>
           ))}
-          <GrowIn inProp={true}>
-            <img src={building} alt={"church building"} style={{ width: "100%" }}/>
-          </GrowIn>
+          <Slide inProp={true} durationOverride={1250}>
+            <img
+              src={building}
+              alt={"church building"}
+              style={{ width: "100%" }}
+            />
+          </Slide>
         </div>
       </div>
     </PageContent>
