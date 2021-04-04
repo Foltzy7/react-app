@@ -5,18 +5,18 @@ import {OrgEvent} from "../../models/orgEvent";
 import PageContent from "../layout/pagecontent";
 
 export default function EventForm() {
-  const { register, handleSubmit, watch, errors, setValue } = useForm<OrgEvent>(
-    {
-      defaultValues: {
-        name: "",
-        location: "",
-        description: "",
-      },
-    }
-  );
+  const { register, handleSubmit, watch, errors } = useForm<OrgEvent>({
+    defaultValues: {
+      name: "",
+      location: "",
+      description: "",
+    },
+  });
   const nameValue = watch("name");
   const onSubmit = (data: any) => {
+      // eslint-disable-next-line no-console
     console.log(nameValue);
+      // eslint-disable-next-line no-console
     console.log(data);
   };
 

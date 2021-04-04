@@ -23,22 +23,24 @@ export default function MinistriesDisplay() {
         <div className="row">
           <h1 className="m-auto">Welcome to YourChurchHere!</h1>
         </div>
-        <div>
-          {ministries.map((ministry, index) => (
-            <div key={`ministry-${index}`}>
-              <h2>{ministry.name}</h2>
-              {ministry.startDate && <p>Date: {ministry.startDate}</p>}
-              <p>Description: {ministry.description}</p>
-            </div>
-          ))}
-          <Slide inProp={true} durationOverride={1000}>
-            <img
-              src={building}
-              alt={"church building"}
-              style={{ width: "100%" }}
-            />
-          </Slide>
-        </div>
+        {isLoading && (
+          <div>
+            {ministries.map((ministry, index) => (
+              <div key={`ministry-${index}`}>
+                <h2>{ministry.name}</h2>
+                {ministry.startDate && <p>Date: {ministry.startDate}</p>}
+                <p>Description: {ministry.description}</p>
+              </div>
+            ))}
+            <Slide inProp={true} durationOverride={1000}>
+              <img
+                src={building}
+                alt={"church building"}
+                style={{ width: "100%" }}
+              />
+            </Slide>
+          </div>
+        )}
       </div>
     </PageContent>
   );

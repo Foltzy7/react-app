@@ -2,19 +2,15 @@ import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fetchMinistries } from "../reducers/ministries";
 import { useDispatch } from "react-redux";
-import { ministryStatus, useStatuses } from "../selectors/status";
-import { useMinistries } from "../selectors";
 import PageContent from "../components/layout/pagecontent";
 
 function About() {
   const dispatch = useDispatch();
-  const { isLoading } = useStatuses([ministryStatus]);
-  const { ministries } = useMinistries();
   const date = "01-01-2020";
 
   useEffect(() => {
     dispatch(fetchMinistries({ date }));
-  }, [date]);
+  }, [dispatch, date]);
   return (
     <PageContent>
       <div>
