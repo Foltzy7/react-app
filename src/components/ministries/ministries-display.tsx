@@ -1,16 +1,14 @@
 import PageContent from "../layout/pagecontent";
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { ministryStatus, useStatuses } from "../../selectors/status";
-import { useMinistries } from "../../selectors";
-import { fetchMinistries } from "../../reducers/ministries";
+import React, {useEffect} from "react";
+import {useDispatch} from "react-redux";
+import {useMinistries} from "../../selectors";
+import {fetchMinistries} from "../../reducers/ministries";
 import "./ministries-display.scss";
-import building from "../../images/building.jpg";
+import {churchBuilding} from "../../images";
 import Slide from "../animations/slide";
 
 export default function MinistriesDisplay() {
   const dispatch = useDispatch();
-  const { isLoading } = useStatuses([ministryStatus]);
   const { ministries } = useMinistries();
   const date = "01-01-2020";
 
@@ -23,7 +21,7 @@ export default function MinistriesDisplay() {
         <div className="row">
           <h1 className="m-auto">Welcome to YourChurchHere!</h1>
         </div>
-        {isLoading && (
+        {ministries && (
           <div>
             {ministries.map((ministry, index) => (
               <div key={`ministry-${index}`}>
@@ -34,7 +32,7 @@ export default function MinistriesDisplay() {
             ))}
             <Slide inProp={true} durationOverride={1000}>
               <img
-                src={building}
+                src={churchBuilding}
                 alt={"church building"}
                 style={{ width: "100%" }}
               />
