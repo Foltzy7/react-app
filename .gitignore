@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/express-api/node_modules
+.idea
+.eslintcache
 /.pnp
 .pnp.js
 

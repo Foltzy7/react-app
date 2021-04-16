@@ -11,7 +11,11 @@ type GetParams = {
   date?: string;
 };
 
-export async function get(path: string,  params: GetParams,  responseType?: ResponseType): Promise<OrgEvent[]> {
+export async function get(
+  path: string,
+  params: GetParams,
+  responseType?: ResponseType
+): Promise<OrgEvent[]> {
   // const apiToken = localStorage.getItem("accessToken");
   const apiToken = "someToken";
   const { data } = await axios.get(buildUrl(path), {
