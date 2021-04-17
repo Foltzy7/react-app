@@ -1,22 +1,21 @@
-const express = require("express");
+import express from "express";
+import cors from "cors";
+
 const app = express();
 const port = 8080;
-const cors = require("cors");
-
-
 const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
 
-const options = {
+const options: cors.CorsOptions = {
     origin: allowedOrigins
 };
-// app.use(cors);
-app.options('*', cors())
+app.use(cors(options));
+app.options('*', cors)
 
-app.get("/", cors(options), (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/orgEvents/all", cors(options), (req, res) => {
+app.get("/orgEvents/all", (req, res) => {
   const orgEvents = [
     {
       name: "Fake Event 1",
