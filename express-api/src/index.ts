@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import events from "./routes/events"
 
 const app = express();
 const port = 8080;
@@ -15,26 +16,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/orgEvents/all", (req, res) => {
-  const orgEvents = [
-    {
-      name: "Fake Event 1",
-      location: "Way down yonder",
-      description: "A real hoedown",
-    },
-    {
-      name: "Fake Event 2",
-      location: "Kentucky",
-      description: "Finger lickin good time",
-    },
-    {
-      name: "Fake Event 3",
-      location: "Canada",
-      description: "Oh Canada, where they are afraid of the dark",
-    },
-  ];
-  res.send(orgEvents);
-});
+app.use("/orgEvents", events)
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console

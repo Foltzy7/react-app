@@ -6,6 +6,6 @@ type Args = {
 };
 
 export async function getOrgEvents({ date }: Args): Promise<OrgEvent[]> {
-  const path = "/orgEvents/all";
+  const path = "/orgEvents";
   return get(path, { date });
 }
