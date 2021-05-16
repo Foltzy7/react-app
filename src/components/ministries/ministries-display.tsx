@@ -25,9 +25,7 @@ export default function MinistriesDisplay() {
           <div>
             {ministries.map((ministry, index) => (
               <div key={`ministry-${index}`}>
-                <h2>{ministry.name}</h2>
-                {ministry.startDate && <p>Date: {ministry.startDate}</p>}
-                <p>Description: {ministry.description}</p>
+                <p>{ministry.description}</p>
               </div>
             ))}
             <Slide inProp={true} durationOverride={1000}>

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fetchMinistries } from "../reducers/ministries";
 import { useDispatch } from "react-redux";
 import PageContent from "../components/layout/pagecontent";
+import Coffee from "../components/coffee/coffee";
 
 function About() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function About() {
     <PageContent>
       <div>
         <h1 className="m-auto">About Us</h1>
+        <Coffee/>
         <a
           className="btn btn-link"
           href={"https://www.scooterscoffee.com/"}
@@ -26,7 +28,6 @@ function About() {
         </a>
         <div>
           <h2>About Church of the churchy church</h2>
-
         </div>
       </div>
     </PageContent>
