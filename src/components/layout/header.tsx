@@ -1,14 +1,15 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
-import { logo } from "../../images";
+import {Nav, Navbar} from "react-bootstrap";
 import "./header.scss";
+import CoffeeSmall from "../coffee/coffee-small";
 
 function Header() {
   return (
     <Navbar className="nav-primary" expand="lg" variant="dark">
       <Navbar.Brand href="#home">
         <a className="navbar-brand" href="/">
-          <img src={logo} alt="Logo" width="50" height="50" />
+            <CoffeeSmall/>
+          {/*<img src={logo} alt="Logo" width="50" height="50" />*/}
         </a>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
