@@ -12,7 +12,6 @@ export default function Home() {
       <Slide inProp={true} durationOverride={1000} vertical={true}>
         <MinistriesDisplay />
       </Slide>
-      <div style={{ height: "150px" }} />
       <EventsDislpay />
       <div style={{ height: "150px" }} />
       <EventForm />
