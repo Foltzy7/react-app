@@ -9,6 +9,9 @@ function Header() {
       <Navbar.Brand href="#home">
         <a className="navbar-brand" href="/">
             <CoffeeSmall/>
+            <h1>
+                Foltz Concepts
+            </h1>
           {/*<img src={logo} alt="Logo" width="50" height="50" />*/}
         </a>
       </Navbar.Brand>

@@ -6,6 +6,7 @@ import {fetchMinistries} from "../../reducers/ministries";
 import "./ministries-display.scss";
 import {churchBuilding} from "../../images";
 import Slide from "../animations/slide";
+import {orgName} from "../../constants";
 
 export default function MinistriesDisplay() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ export default function MinistriesDisplay() {
     <PageContent className={"content-primary"}>
       <div id="ministries-content" className={"ministries-content"}>
         <div className="row">
-          <h1 className="m-auto">Welcome to YourChurchHere!</h1>
+          <h1 className="m-auto">Welcome to {orgName}!</h1>
         </div>
         {ministries && (
           <div>
