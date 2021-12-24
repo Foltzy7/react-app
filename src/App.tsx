@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 import {Provider} from "react-redux";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./pages/home";
 import ErrorBoundary from "./pages/errors/error-boundary";
 import {library} from "@fortawesome/fontawesome-svg-core";
@@ -26,20 +26,20 @@ function App() {
                   <div>
                     {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-                    <Switch>
-                      <Route path="/about">
+                    <Routes>
+                      <Route path="/about" element={
                         <Page name="about">
                           <Header />
                           <About />
                         </Page>
-                      </Route>
-                      <Route path="/">
+                      }/>
+                      <Route path="/" element={
                         <Page name="home">
                           <Header />
                           <Home />
                         </Page>
-                      </Route>
-                    </Switch>
+                      }/>
+                    </Routes>
                   </div>
                 </Provider>
               </ErrorBoundary>

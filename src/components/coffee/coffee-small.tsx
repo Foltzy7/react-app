@@ -3,7 +3,7 @@ import "./coffee-small.scss";
 
 function CoffeeSmall() {
   return (
-    <div className="coffee-container-small">
+    <div className="coffee-small-container">
       <div className="cup-small">
         <div className="top-coffee-small">
           <div className="vapor-small">
