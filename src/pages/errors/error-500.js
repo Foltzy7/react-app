@@ -1,9 +1,9 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./error-500.scss";
 
 function Error500() {
-  const history = useHistory();
+  const history = useNavigate();
 
   function handleClick() {
     history.goBack();
